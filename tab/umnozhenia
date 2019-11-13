@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Знакомство с PHP</title>
+</head>
+<body>
+  <table border="1" rules="cols">
+    <tr>
+      <?php
+      $operators = ["+","-","*","/"];
+  for ($i=1; $i<35; $i++) {
+    echo "<tr>";
+    for ($j=2; $j<=6; $j++) {
+      $operator = $operators[rand(0,3)];
+      $num = rand(1,20);
+      $num2 = rand(1,20);
+      if ($operator=="/" and $num%$num2!=0 or $operator=="*" and $num*$num2 > 100 or $operator=="-" and $num-$num2 < 0) {
+        --$j;
+        continue;
+      }
+      
+      echo "<td align='right'>$num $operator $num2 = _____</td>";
+    
+    }
+    echo "</tr>";
+  }
+  ?>
+    </tr>
+  </table>
+  
+  
+  
+</body>
+</html>
